@@ -87,4 +87,17 @@ describe("FileFilter", function(){
 
   });
 
+  describe(".report", function(){
+
+    var result;
+
+    beforeEach(function(){
+      result = subject.methods.report.call(subject, null);
+    });
+
+    it("should return options.files", function(){
+      expect(result).toBe(subject.options.files);
+    });
+  });
+
 });
