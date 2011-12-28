@@ -1,0 +1,29 @@
+{
+  "name": "match-files",
+  "description": "Recursive file filtering utils",
+  "keywords": ["directory", "scan", "file filtering"],
+  "main": "index.js",
+  "author": "James Lal <james@lightsofapollo.com>",
+
+  "homepage": "https://github.com/lightsofapollo/match-files",
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:lightsofapollo/match-files.git"
+  },
+
+  "scripts": {
+    "test": "make test"
+  },
+
+  "dependencies": {
+    "step-object": "~0.0"
+  },
+
+  "devDependencies": {
+    "jasmine-node": "~1.0"
+  },
+
+  "version": "0.0.1"
+}
+
