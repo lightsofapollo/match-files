@@ -66,6 +66,22 @@ describe("FileFilter", function(){
         )
       });
 
+      it("should not push directory into list of files", function(){
+        expect(subject.options.files).not.toContain(path);
+      });
+
+
+    });
+
+    describe("when stat is a file", function(){
+
+      beforeEach(function(){
+        subject.methods.read.call(subject, null, stat);
+      });
+
+      it("should push filename into options.files", function(){
+        expect(subject.options.files).toContain(path);
+      });
 
     });
 
