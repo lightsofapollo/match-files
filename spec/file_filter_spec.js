@@ -98,6 +98,19 @@ describe("FileFilter", function(){
     it("should return options.files", function(){
       expect(result).toBe(subject.options.files);
     });
+
+  });
+
+  describe("stat'ing a single file", function(){
+
+    it("should return the list of files", function(done){
+      var file = __dirname + '/files/file.js';
+      FileFilter.filter(file, {files: []}, function(err, result){
+        expect(result[0]).toEqual(file);
+        done();
+      });
+    });
+
   });
 
 });

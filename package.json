@@ -2,7 +2,7 @@
   "name": "match-files",
   "description": "Recursive file filtering utils",
   "keywords": ["directory", "scan", "file filtering"],
-  "main": "index.js",
+  "main": "lib/match_files",
   "author": "James Lal <james@lightsofapollo.com>",
 
   "homepage": "https://github.com/lightsofapollo/match-files",
@@ -17,11 +17,11 @@
   },
 
   "dependencies": {
-    "step-object": "~0.0"
+    "step-object": "0.0.4"
   },
 
   "devDependencies": {
-    "jasmine-node": "~1.0"
+    "jasmine-node": "1.0.14"
   },
 
   "version": "0.0.1"

@@ -72,7 +72,7 @@ describe("RecurseDirectory", function(){
     var parallel;
 
     beforeEach(function(){
-      parallel = subject.parallel();
+      group = subject.group();
 
       spyOn(FileFilter, 'filter');
       subject.methods.read.call(subject, null, ['file', 'file2']);
@@ -80,11 +80,11 @@ describe("RecurseDirectory", function(){
 
     it("should queue a FileFilter", function(){
       expect(FileFilter.filter).toHaveBeenCalledWith(
-        path.join(dir, 'file'), subject.options, parallel()
+        path.join(dir, 'file'), subject.options, group()
       );
 
       expect(FileFilter.filter).toHaveBeenCalledWith(
-        path.join(dir, 'file2'), subject.options, parallel()
+        path.join(dir, 'file2'), subject.options, group()
       );
     })
   });
@@ -111,20 +111,18 @@ describe("RecurseDirectory", function(){
       path.join(dir, name);
     }
 
-    var done = false,
-        expected = [
+    var expected = [
           pathFor('file.js'),
           pathFor('nested/file.js'),
           pathFor('nested/directory/file.js')
         ].sort();
 
-    it("should return expected list of files including nested directories", function(done){
-      RecurseDirectory.filter(dir, {}, function(err, files){
-        expect(files.sort).toEqual(expected);
-        done();
+    it("should return expected list of files including nested directories", function(){
 
-        return this;
+      RecurseDirectory.filter(dir, {basedir: '??? ---'}, function(err, files){
+        expect(files.sort()).toEqual(expected);
       });
+
     });
 
   });
