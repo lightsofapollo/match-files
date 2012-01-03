@@ -2,7 +2,7 @@
   "name": "match-files",
   "description": "Recursive file filtering utils",
   "keywords": ["directory", "scan", "file filtering"],
-  "main": "lib/match_files",
+  "main": "lib/match-files",
   "author": "James Lal <james@lightsofapollo.com>",
 
   "homepage": "https://github.com/lightsofapollo/match-files",
@@ -17,7 +17,7 @@
   },
 
   "dependencies": {
-    "step-object": "0.0.4"
+    "step-object": "0.2.0"
   },
 
   "devDependencies": {

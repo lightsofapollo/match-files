@@ -1,6 +1,7 @@
 module.exports = exports = MockStepObjectScope;
 
 function MockStepObjectScope(stepObject){
+
   var groupFn = function(){
         return groupFn;
       },
@@ -8,6 +9,7 @@ function MockStepObjectScope(stepObject){
         return parallelFn;
       },
       result, firstStep = stepObject.order[0],
+
       i, len;
 
   var constructor = function(){
@@ -29,4 +31,5 @@ function MockStepObjectScope(stepObject){
   }
 
   return constructor;
+
 };
